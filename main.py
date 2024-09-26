@@ -49,7 +49,7 @@ mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
 # Connect to the MQTT broker (adjust IP address/port if necessary)
-mqtt_client.connect("localhost", 1883, 60)
+mqtt_client.connect("10.205.3.196", 1883, 60)
 
 # Start the MQTT client loop in a non-blocking manner
 mqtt_client.loop_start()
