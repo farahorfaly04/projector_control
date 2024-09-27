@@ -32,5 +32,6 @@ mqttc.on_subscribe = on_subscribe
 mqttc.on_unsubscribe = on_unsubscribe
 
 # Connect to the broker
+mqttc.username_pw_set("mqtt", "123456789") 
 mqttc.connect("10.205.3.196", 1883, 60)  
 mqttc.loop_forever()
