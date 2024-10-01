@@ -4,7 +4,7 @@ import serial
 ser = serial.Serial('/dev/ttyUSB0', 9600)  
 
 commands_dict = {
-    "HDMI1": b'\x7E\x30\x30\x31\x32\x20\x31\x0D',  # Hex code for HDMI1
+    "HDMI1": b'\x7E\x30\x30\x31\x34\x30\x20\x34\x32\x0D',  # Hex code for HDMI1
     "HDMI2": b'\x7E\x30\x30\x31\x32\x20\x31\x35\x0D',  # Hex code for HDMI2
 
 
