@@ -6,16 +6,14 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)
 commands_dict = {
     "HDMI1": b'\x7E\x30\x30\x31\x32\x20\x31\x0D',  # Hex code for HDMI1
     "HDMI2": b'\x7E\x30\x30\x31\x32\x20\x31\x35\x0D',  # Hex code for HDMI2
-    "VGA1": b'\x7E\x30\x30\x31\x32\x20\x30\x38\x0D',   # Hex code for VGA1
-    "VGA2": b'\x7E\x30\x30\x31\x32\x20\x30\x33\x0D',   # Hex code for VGA2 
-    "Video": b'\x7E\x30\x30\x31\x32\x20\x30\x34\x0D',   # Hex code for Video 
+
 
     "OFF": b'\x7E\x30\x30\x30\x30\x20\x30\x0D',  # Hex code for OFF
     "ON": b'\x7E\x30\x30\x30\x30\x20\x31\x0D',  # Hex code for ON
 
-    "4:3": b'\x7E\x30\x30\x36\x30\x20\x31\x20\x0D',  # Hex code for 4:3 aspect ratio
-    "16:9": b'\x7E\x30\x30\x36\x30\x20\x32\x20\x0D',  # Hex code for 16:9 aspect ratio
-    "16:10": b'\x7E\x30\x30\x36\x30\x20\x33\x20\x0D',  # Hex code for 16:10 aspect ratio
+    "4:3": b'\x7E\x30\x30\x36\x30\x20\x31\x0D',  # Hex code for 4:3 aspect ratio
+    "16:9": b'\x7E\x30\x30\x36\x30\x20\x32\x0D',  # Hex code for 16:9 aspect ratio
+    "16:10": b'\x7E\x30\x30\x36\x30\x20\x33\x0D',  # Hex code for 16:10 aspect ratio
     "Native": b'\x7E\x30\x30\x36\x30\x20\x36\x20\x0D',  # Hex code for Native aspect ratio
     "Auto": b'\x7E\x30\x30\x36\x30\x20\x39\x20\x0D',  # Hex code for Auto aspect ratio
 
