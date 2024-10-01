@@ -4,9 +4,8 @@ import serial
 ser = serial.Serial('/dev/ttyUSB0', 9600)  
 
 commands_dict = {
-    
-    "HDMI1": b'\x7E\x30\x30\x35\x31\x38\x20\x30\x20\x0D',  # Hex code for HDMI1
-    "HDMI2": b'\x7E\x30\x30\x35\x31\x38\x20\x31\x20\x0D',  # Hex code for HDMI2
+    "HDMI1": b'\x7E\x30\x30\x31\x32\x20\x31\x0D',  # Hex code for HDMI1
+    "HDMI2": b'\x7E\x30\x30\x31\x32\x20\x31\x35\x0D',  # Hex code for HDMI2
     
     "OFF": b'\x7E\x30\x30\x30\x30\x20\x30\x0D',  # Hex code for OFF
     "ON": b'\x7E\x30\x30\x30\x30\x20\x31\x0D',  # Hex code for ON
@@ -23,7 +22,6 @@ commands_dict = {
     "Remote Mouse Right": b'\x7E\x30\x30\x31\x34\x30\x20\x36\x0D', # Hex code for Remote Mouse Right
     "Remote Mouse Down": b'\x7E\x30\x30\x31\x34\x30\x20\x37\x0D'   # Hex code for Remote Mouse Down
 }
-
 
 def on_subscribe(client, userdata, mid, granted_qos):
     print(f"Subscription successful with QoS: {granted_qos}")
