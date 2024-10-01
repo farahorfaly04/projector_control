@@ -17,11 +17,11 @@ commands_dict = {
     "Native": b'\x7E\x30\x30\x36\x30\x20\x36\x20\x0D',  # Hex code for Native aspect ratio
     "Auto": b'\x7E\x30\x30\x36\x30\x20\x39\x20\x0D',  # Hex code for Auto aspect ratio
 
-    "Remote Mouse Up": b'\x7E\x30\x30\x31\x34\x30\x20\x33\x0D',    # Hex code for Remote Mouse Up
-    "Remote Mouse Left": b'\x7E\x30\x30\x31\x34\x30\x20\x34\x0D',  # Hex code for Remote Mouse Left
+    "Remote Mouse Up": b'\x7E\x30\x30\x31\x34\x30\x20\x31\x30\x0D',    # Hex code for Remote Mouse Up
+    "Remote Mouse Left": b'\x7E\x30\x30\x31\x34\x30\x20\x31\x31\x0D',  # Hex code for Remote Mouse Left
     "Remote Mouse Enter": b'\x7E\x30\x30\x31\x34\x30\x20\x31\x32\x0D', # Hex code for Remote Mouse Enter
-    "Remote Mouse Right": b'\x7E\x30\x30\x31\x34\x30\x20\x36\x0D', # Hex code for Remote Mouse Right
-    "Remote Mouse Down": b'\x7E\x30\x30\x31\x34\x30\x20\x37\x0D'   # Hex code for Remote Mouse Down
+    "Remote Mouse Right": b'\x7E\x30\x30\x31\x34\x30\x20\x31\x33\x0DD', # Hex code for Remote Mouse Right
+    "Remote Mouse Down": b'\x7E\x30\x30\x31\x34\x30\x20\x31\x34\x0D'   # Hex code for Remote Mouse Down
 }
 
 def on_subscribe(client, userdata, mid, granted_qos):
