@@ -26,12 +26,12 @@ commands_dict = {
     "Menu": b'\x7E\x30\x30\x31\x34\x30\x20\x32\x30\x0D', # Hex code for Menu
     "Back": b'\x7E\x30\x30\x31\x34\x30\x20\x37\x34\x0D', # Hex code for Back
 
-    "Image Shift H+": b'\x7E\x30\x30\x35\x34\x30\x20\x32\x0D', # Hex code for Image Shift H+
-    "Image Shift H-": b'\x7E\x30\x30\x35\x34\x30\x20\x31\x0D', # Hex code for Image Shift H-
-    "Image Shift V+": b'\x7E\x30\x30\x35\x34\x31\x20\x32\x0D', # Hex code for Image Shift V+
-    "Image Shift V-": b'\x7E\x30\x30\x35\x34\x31\x20\x31\x0D', # Hex code for Image Shift V-
+    "h-plus": b'\x7E\x30\x30\x35\x34\x30\x20\x32\x0D', # Hex code for Image Shift H+
+    "h-minus": b'\x7E\x30\x30\x35\x34\x30\x20\x31\x0D', # Hex code for Image Shift H-
+    "v-plus": b'\x7E\x30\x30\x35\x34\x31\x20\x32\x0D', # Hex code for Image Shift V+
+    "v-minus": b'\x7E\x30\x30\x35\x34\x31\x20\x31\x0D', # Hex code for Image Shift V-
 
-    
+
     
 }
 
