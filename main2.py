@@ -5,9 +5,9 @@ ser = serial.Serial('/dev/ttyUSB0', 9600)
 
 def format_command(base_command, value):
     """Format the command by inserting the parameter value in the appropriate place."""
-    # Convert the value to hexadecimal
-    value_hex = f"{value:X}".zfill(4)  # Convert to hex, padded to 4 characters
+    value_hex = f"{value:04X}"  # Convert to hex, padded to 4 characters
     return base_command.replace("XXXX", value_hex)
+
 
 commands_dict = {
     # Static commands (no parameters)
@@ -71,13 +71,14 @@ def on_message(client, userdata, msg):
             if param is not None:
                 formatted_command = format_command(base_command, param)
                 print(f"Formatted command with parameter: {formatted_command}")
-                ser.write(bytes.fromhex(formatted_command))
+                ser.write(formatted_command.encode())  # Convert to bytes
                 print(f"Sent formatted command with parameter: {formatted_command}")
             else:
                 print(f"No parameter provided for command: {command}")
         else:  # Commands that don't require parameters
-            ser.write(base_command)
+            ser.write(base_command)  # Directly send the byte string
             print(f"Sent command: {base_command}")
+
     else:
         print(f"No command found for message: {received_message}")
 
