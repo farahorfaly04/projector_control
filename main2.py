@@ -64,11 +64,13 @@ def on_message(client, userdata, msg):
 
     if command in commands_dict:
         base_command = commands_dict[command]
+        print(f"Base command: {base_command}")
+        print(f"Parameter: {param}")
         
         if "XXXX" in base_command:  # If this command expects a parameter
             if param is not None:
                 formatted_command = format_command(base_command, param)
-                print(f"Formatted command with parameter: {formatted_command}, base command: {base_command}, param: {param}")
+                print(f"Formatted command with parameter: {formatted_command}")
                 ser.write(bytes.fromhex(formatted_command))
                 print(f"Sent formatted command with parameter: {formatted_command}")
             else:
