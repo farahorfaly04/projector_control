@@ -29,21 +29,21 @@ commands_dict = {
     "Back": b'\x7E\x30\x30\x31\x34\x30\x20\x37\x34\x0D', # Hex code for Back
 
     # Dynamic commands (require parameters)
-    "Image Shift H": "\x7E\x30\x30\x35\x34\x30\x20XXXX\x0D",  # Placeholder for value
-    "Image Shift V": "\x7E\x30\x30\x35\x34\x31\x20XXXX\x0D",  # Placeholder for value
+    "Image-Shift-H": "\x7E\x30\x30\x35\x34\x30\x20XXXX\x0D",  # Placeholder for value
+    "Image-Shift-V": "\x7E\x30\x30\x35\x34\x31\x20XXXX\x0D",  # Placeholder for value
 
-    "H Keystone": "\x7E\x30\x30\x36\x36\x20XXXX\x0D",  # Placeholder for value
-    "V Keystone": "\x7E\x30\x30\x36\x36\x20XXXX\x0D",  # Placeholder for value
+    "H-Keystone": "\x7E\x30\x30\x36\x36\x20XXXX\x0D",  # Placeholder for value
+    "V-Keystone": "\x7E\x30\x30\x36\x36\x20XXXX\x0D",  # Placeholder for value
 
     # Four Corners Adjustment
-    "Top-left H": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
-    "Top-left V": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
-    "Top-right H": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
-    "Top-right V": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
-    "Bottom-left H": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
-    "Bottom-left V": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
-    "Bottom-right H": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
-    "Bottom-right V": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
+    "Top-left-H": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
+    "Top-left-V": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
+    "Top-right-H": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
+    "Top-right-V": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
+    "Bottom-left-H": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
+    "Bottom-left-V": "\x7E\x30\x30\x35\x38\x20XXXX\x0D",  # Placeholder for value
+    "Bottom-right-H": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
+    "Bottom-right-V": "\x7E\x30\x30\x35\x39\x20XXXX\x0D",  # Placeholder for value
 }
 
 def on_subscribe(client, userdata, mid, granted_qos):
