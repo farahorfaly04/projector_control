@@ -84,7 +84,6 @@ commands_dict_hex = {
     "Bottom-right-H": "\x7E\x30\x30\x35\x39\x20n\x0D", # bottom-right corner horizontal
     "Bottom-right-V": "\x7E\x30\x30\x35\x39\x20n\x0D", # bottom-right corner vertical
 }
-
 def on_subscribe(client, userdata, mid, granted_qos):
     print(f"Subscription successful with QoS: {granted_qos}")
 
@@ -96,28 +95,10 @@ def on_message(client, userdata, msg):
     received_message = msg.payload.decode()
     print(f"Received message: {received_message} on topic: {msg.topic}")
     
-    # Split the command and the parameter
-    parts = received_message.split(" ")
-    command = parts[0]
-    param = int(parts[1]) if len(parts) > 1 else None
-
-    if command in commands_dict_hex:
-        base_command = commands_dict_hex[command]
-        print(f"Base command: {base_command}")
-        print(f"Parameter: {param}")
-        
-        if "n" in base_command:  # If this command expects a parameter
-            if param is not None:
-                formatted_command = format_command(base_command, param)
-                print(f"Formatted command with parameter: {formatted_command}")
-                ser.write(formatted_command.encode())  # Convert to bytes
-                print(f"Sent formatted command with parameter: {formatted_command}")
-            else:
-                print(f"No parameter provided for command: {command}")
-        else:  # Commands that don't require parameters
-            ser.write(base_command)  # Directly send the byte string
-            print(f"Sent command: {base_command}")
-
+    if received_message in commands_dict_hex:
+        hex_command = commands_dict_hex[received_message]
+        ser.write(hex_command)
+        print(f"Sent hex command: {hex_command}")
     else:
         print(f"No command found for message: {received_message}")
 
