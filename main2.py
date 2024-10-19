@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import serial
+import time
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)  
 
@@ -85,6 +86,7 @@ commands_dict_hex = {
     "Bottom-right-H": "\x7E\x30\x30\x35\x39\x20n\x0D", # bottom-right corner horizontal
     "Bottom-right-V": "\x7E\x30\x30\x35\x39\x20n\x0D", # bottom-right corner vertical
 }
+
 def on_subscribe(client, userdata, mid, granted_qos):
     print(f"Subscription successful with QoS: {granted_qos}")
 
@@ -99,7 +101,8 @@ def on_message(client, userdata, msg):
     if received_message in commands_dict_hex:
         hex_command = commands_dict_hex[received_message]
         ser.write(hex_command)
-        print(f"Sent hex command: {hex_command}")
+        time.sleep(0.1)
+        print(f"Sent {received_message} command: {hex_command}")
         response = ser.readline().decode('ascii').strip()
         print(f"Received response: {response}")
     else:
