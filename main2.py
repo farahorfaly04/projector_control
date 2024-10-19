@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt
 import serial
-import time
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)  
 
@@ -101,10 +100,7 @@ def on_message(client, userdata, msg):
     if received_message in commands_dict_hex:
         hex_command = commands_dict_hex[received_message]
         ser.write(hex_command)
-        time.sleep(0.1)
         print(f"Sent {received_message} command: {hex_command}")
-        response = ser.readline().decode('ascii').strip()
-        print(f"Received response: {response}")
     else:
         print(f"No command found for message: {received_message}")
 
