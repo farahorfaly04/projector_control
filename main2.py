@@ -100,6 +100,8 @@ def on_message(client, userdata, msg):
         hex_command = commands_dict_hex[received_message]
         ser.write(hex_command)
         print(f"Sent hex command: {hex_command}")
+        response = ser.readline().decode('ascii').strip()
+        print(f"Received response: {response}")
     else:
         print(f"No command found for message: {received_message}")
 
