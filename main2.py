@@ -97,10 +97,13 @@ def on_message(client, userdata, msg):
     received_message = msg.payload.decode()
     print(f"Received message: {received_message} on topic: {msg.topic}")
     
-    if received_message in commands_dict_ascii:
-        hex_command = commands_dict_ascii[received_message]
-        ser.write(hex_command.encode('utf-8'))
-        print(f"Sent {received_message} command: {hex_command}")
+    if received_message[0] in commands_dict_ascii:
+        ascii_command = commands_dict_ascii[received_message[0]]
+        if "n" in ascii_command:
+            n = received_message[1]
+            ascii_command.replace("n", n)
+        ser.write(ascii_command.encode('utf-8'))
+        print(f"Sent {received_message} command: {ascii_command}")
     else:
         print(f"No command found for message: {received_message}")
 
