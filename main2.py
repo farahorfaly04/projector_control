@@ -96,11 +96,16 @@ def on_unsubscribe(client, userdata, mid):
 def on_message(client, userdata, msg):
     received_message = msg.payload.decode()
     print(f"Received message: {received_message} on topic: {msg.topic}")
-    
-    if received_message[0] in commands_dict_ascii:
-        ascii_command = commands_dict_ascii[received_message[0]]
+    parts = received_message.split()
+    if len(parts) == 2 and parts[1].isdigit():
+        string_command = parts[0]
+        n = int(parts[1])
+    else:
+        string_command = parts[0]
+
+    if string_command in commands_dict_ascii:
+        ascii_command = commands_dict_ascii[string_command]
         if "n" in ascii_command:
-            n = received_message[1]
             ascii_command.replace("n", n)
         ser.write(ascii_command.encode('utf-8'))
         print(f"Sent {received_message} command: {ascii_command}")
