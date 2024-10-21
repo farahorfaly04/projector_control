@@ -10,7 +10,7 @@ def format_command(base_command, value):
 
 commands_dict_ascii = {
     # Static commands (no parameters) 
-    "HDMI1": "~0012 14\r", # HDMI1 (original: ~0014 0\r)
+    "HDMI1": "~0012 14\r", # HDMI1 (original: ~0012 1\r) also try ~00140 42\r
     "HDMI2": "~0012 15\r", # HDMI2
     "OFF": "~0000 0\r", # OFF
     "ON": "~0000 1\r", # ON
@@ -18,7 +18,7 @@ commands_dict_ascii = {
     "4:3": "~0060 1\r", # 4:3 aspect ratio
     "16:9": "~0060 2\r", # 16:9 aspect ratio
 
-    "Enter": "~00140 10\r",   # Remote Mouse Up
+    "Up": "~00140 10\r",   # Remote Mouse Up
     "Left": "~00140 11\r", # Remote Mouse Left
     "Enter": "~00140 12\r", # Remote Mouse Enter
     "Right": "~00140 13\r", # Remote Mouse Right
@@ -28,14 +28,14 @@ commands_dict_ascii = {
     "Back": "~00140 74\r", # Back
 
     # Dynamic commands (require parameters n)
-    "Image-Shift-H": "~00540 n\r", # horizontal image shift
-    "Image-Shift-V": "~00541 n\r", # vertical image shift
+    "Image-Shift-H": "~0063 n\r", # horizontal image shift (-100 <= n <= 100)
+    "Image-Shift-V": "~0064 n\r", # vertical image shift (-100 <= n <= 100)
 
-    "Keystone-H": "~0066 n\r", # horizontal keystone
-    "Keystone-V": "~0066 n\r", # vertical keystone
+    "Keystone-H": "~0065 n\r", # horizontal keystone (-40 <= n <= 40)
+    "Keystone-V": "~0066 n\r", # vertical keystone (-40 <= n <= 40)
 
     # Four Corners Adjustment
-    "Top-left-H": "~0058 n\r", # top-left corner horizontal
+    "Top-left-H": "~0058 n\r", # top-left corner horizontal (0)
     "Top-left-V": "~0058 n\r", # top-left corner vertical
 
     "Top-right-H": "~0059 n\r", # top-right corner horizontal
@@ -97,8 +97,8 @@ def on_message(client, userdata, msg):
     received_message = msg.payload.decode()
     print(f"Received message: {received_message} on topic: {msg.topic}")
     
-    if received_message in commands_dict_hex:
-        hex_command = commands_dict_hex[received_message]
+    if received_message in commands_dict_ascii:
+        hex_command = commands_dict_ascii[received_message]
         ser.write(hex_command)
         print(f"Sent {received_message} command: {hex_command}")
     else:
