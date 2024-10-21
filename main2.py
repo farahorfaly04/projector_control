@@ -99,7 +99,7 @@ def on_message(client, userdata, msg):
     
     if received_message in commands_dict_ascii:
         hex_command = commands_dict_ascii[received_message]
-        ser.write(hex_command)
+        ser.write(hex_command.encode('utf-8'))
         print(f"Sent {received_message} command: {hex_command}")
     else:
         print(f"No command found for message: {received_message}")
