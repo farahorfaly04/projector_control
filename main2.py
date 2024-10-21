@@ -100,6 +100,7 @@ def on_message(client, userdata, msg):
     if len(parts) == 2 and parts[1].isdigit():
         string_command = parts[0]
         n = parts[1]
+        print(n)
     else:
         string_command = parts[0]
 
