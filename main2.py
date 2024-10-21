@@ -107,7 +107,7 @@ def on_message(client, userdata, msg):
     if string_command in commands_dict_ascii:
         ascii_command = commands_dict_ascii[string_command]
         if "n" in ascii_command:
-            ascii_command.replace("n", n)
+            ascii_command = ascii_command.replace("n", n)
         ser.write(ascii_command.encode('utf-8'))
         print(f"Sent {received_message} command: {ascii_command}")
     else:
