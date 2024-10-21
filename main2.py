@@ -110,7 +110,7 @@ def on_message(client, userdata, msg):
         ser.write(ascii_command.encode('utf-8'))
         print(f"Sent {received_message} command: {ascii_command}")
     else:
-        print(f"No command found for message: {received_message}")
+        print(f"No command found for message: {string_command}")
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
