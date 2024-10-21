@@ -10,8 +10,8 @@ def format_command(base_command, value):
 
 commands_dict_ascii = {
     # Static commands (no parameters) 
-    "HDMI1": "~0012 1\r", # HDMI1 (original: ~0012 1\r) also try ~00140 42\r
-    "HDMI2": "~0140 42\r", # HDMI2
+    "HDMI1": "~00305 1\r", # HDMI1 
+    "HDMI2": "~0012 15\r", # HDMI2
     "OFF": "~0000 0\r", # OFF
     "ON": "~0000 1\r", # ON
 
