@@ -52,8 +52,8 @@ def on_message(client, userdata, msg):
     received_message = msg.payload.decode()
     print(f"Received message: {received_message} on topic: {msg.topic}")
     
-    if received_message in commands_dict:
-        hex_command = commands_dict[received_message]
+    if received_message in commands_dict_hex:
+        hex_command = commands_dict_hex[received_message]
         ser.write(hex_command)
         print(f"Sent hex command: {hex_command}")
     else:
