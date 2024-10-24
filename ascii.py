@@ -3,11 +3,6 @@ import serial
 
 ser = serial.Serial('/dev/ttyUSB0', 9600)  
 
-def format_command(base_command, value):
-    """Format the command by inserting the parameter value in the appropriate place."""
-    value_hex = f"{value:04X}"  # Convert to hex, padded to 4 characters
-    return base_command.replace("n", value_hex)
-
 commands_dict_ascii = {
     # Static commands (no parameters) 
     "HDMI1": "~00305 1\r", # HDMI1 
@@ -31,11 +26,11 @@ commands_dict_ascii = {
     "Image-Shift-H": "~0063 n\r", # horizontal image shift (-100 <= n <= 100)
     "Image-Shift-V": "~0064 n\r", # vertical image shift (-100 <= n <= 100)
 
-    "Keystone-H": "~0065 n\r", # horizontal keystone (-40 <= n <= 40)
+    "Keystone-H": "~0065 -40\r", # horizontal keystone (-40 <= n <= 40)
     "Keystone-V": "~0066 n\r", # vertical keystone (-40 <= n <= 40)
 
     # Four Corners Adjustment
-    "Top-left-H": "~0058 n\r", # top-left corner horizontal (0)
+    "Top-left-H": "~0058 n\r", # top-left corner horizontal 
     "Top-left-V": "~0058 n\r", # top-left corner vertical
 
     "Top-right-H": "~0059 n\r", # top-right corner horizontal
@@ -62,13 +57,13 @@ def on_message(client, userdata, msg):
     if len(parts) == 2 and parts[1].isdigit():
         string_command = parts[0]
         n = parts[1]
-        print(n)
     else:
         string_command = parts[0]
+        n = None
 
     if string_command in commands_dict_ascii:
         ascii_command = commands_dict_ascii[string_command]
-        if "n" in ascii_command:
+        if "n" in ascii_command and n is not None:
             ascii_command = ascii_command.replace("n", n)
         ser.write(ascii_command.encode('utf-8'))
         print(f"Sent {received_message} command: {ascii_command}")
