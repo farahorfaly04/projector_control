@@ -26,21 +26,29 @@ commands_dict_ascii = {
     "Image-Shift-H": "~0063 n\r", # horizontal image shift (-100 <= n <= 100)
     "Image-Shift-V": "~0064 n\r", # vertical image shift (-100 <= n <= 100)
 
-    "Keystone-H": "~0065 -40\r", # horizontal keystone (-40 <= n <= 40)
+    "Keystone-H": "~0065 n\r", # horizontal keystone (-40 <= n <= 40)
     "Keystone-V": "~0066 n\r", # vertical keystone (-40 <= n <= 40)
 
-    # Four Corners Adjustment
-    "Top-left-H": "~0058 n\r", # top-left corner horizontal 
-    "Top-left-V": "~0058 n\r", # top-left corner vertical
-
-    "Top-right-H": "~0059 n\r", # top-right corner horizontal
-    "Top-right-V": "~0059 n\r", # top-right corner vertical
-
-    "Bottom-left-H": "~0058 n\r", # bottom-left corner horizontal
-    "Bottom-left-V": "~0058 n\r", # bottom-left corner vertical
-
-    "Bottom-right-H": "~0059 n\r", # bottom-right corner horizontal
-    "Bottom-right-V": "~0059 n\r", # bottom-right corner vertical
+    # Four corners
+    "TopLeft_Right": "~0059 1\r",
+    "TopLeft_Left": "~0059 2\r",
+    "TopLeft_Up": "~0059 3\r",
+    "TopLeft_Down": "~0059 4\r",
+    
+    "TopRight_Left": "~0059 5\r",
+    "TopRight_Right": "~0059 6\r",
+    "TopRight_Up": "~0059 7\r",
+    "TopRight_Down": "~0059 8\r",
+    
+    "BottomLeft_Right": "~0059 9\r",
+    "BottomLeft_Left": "~0059 10\r",
+    "BottomLeft_Up": "~0059 11\r",
+    "BottomLeft_Down": "~0059 12\r",
+    
+    "BottomRight_Left": "~0059 13\r",
+    "BottomRight_Right": "~0059 14\r",
+    "BottomRight_Up": "~0059 15\r",
+    "BottomRight_Down": "~0059 16\r",
 }
 
 def on_subscribe(client, userdata, mid, granted_qos):
