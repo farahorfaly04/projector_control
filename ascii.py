@@ -28,27 +28,6 @@ commands_dict_ascii = {
 
     "Keystone-H": "~0065 n\r", # horizontal keystone (-40 <= n <= 40)
     "Keystone-V": "~0066 n\r", # vertical keystone (-40 <= n <= 40)
-
-    # Four corners
-    "TopLeft_Right": "~0059 1\r",
-    "TopLeft_Left": "~0059 2\r",
-    "TopLeft_Up": "~0059 3\r",
-    "TopLeft_Down": "~0059 4\r",
-    
-    "TopRight_Left": "~0059 5\r",
-    "TopRight_Right": "~0059 6\r",
-    "TopRight_Up": "~0059 7\r",
-    "TopRight_Down": "~0059 8\r",
-    
-    "BottomLeft_Right": "~0059 9\r",
-    "BottomLeft_Left": "~0059 10\r",
-    "BottomLeft_Up": "~0059 11\r",
-    "BottomLeft_Down": "~0059 12\r",
-    
-    "BottomRight_Left": "~0059 13\r",
-    "BottomRight_Right": "~0059 14\r",
-    "BottomRight_Up": "~0059 15\r",
-    "BottomRight_Down": "~0059 16\r",
 }
 
 def on_subscribe(client, userdata, mid, granted_qos):
