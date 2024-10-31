@@ -116,7 +116,7 @@ To keep `ascii.py` running in the background and automatically restart it if it 
     ```
 
 ### Ressources 
-- [Optoma Projectors RS232 Commands List](./resources/RS232_function_list.pdf)
+- [Optoma Projectors RS232 Commands List](./ressources/RS232_function_list.pdf)
 
 
 Enjoy seamless control of your Optoma projector through Home Assistant!
