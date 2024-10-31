@@ -6,7 +6,7 @@ This project integrates the Optoma UHD35STx projector with Home Assistant, enabl
 
 Below is an example screenshot of the Home Assistant dashboard layout for projector control:
 
-![Home Assistant Dashboard Layout](dashboard.png)
+![Home Assistant Dashboard Layout](./ressources/dashboard.png)
 
 ## Features
 
@@ -116,7 +116,7 @@ To keep `ascii.py` running in the background and automatically restart it if it 
     ```
 
 ### Ressources 
-- [Optoma Projectors RS232 Commands List](./RS232_function_list.pdf)
+- [Optoma Projectors RS232 Commands List](./resources/RS232_function_list.pdf)
 
 
 Enjoy seamless control of your Optoma projector through Home Assistant!
