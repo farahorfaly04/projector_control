@@ -49,12 +49,6 @@ Below is an example screenshot of the Home Assistant dashboard layout for projec
      git clone https://github.com/IE-Robotics-Lab/optoma_projector_control.git
      cd optoma_projector_control
      ```
-   - Create a Python environment:
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     pip install -r requirements.txt
-     ```
    - Install dependencies:
      ```bash
      pip install -r requirements.txt
