@@ -1,0 +1,5 @@
+{
+  "DEVICE_ID": "aether",
+  "IP": "10.205.10.9",
+  "SERIAL_PORT": "/dev/ttyUSB0"
+}

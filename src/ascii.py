@@ -1,7 +1,15 @@
 import paho.mqtt.client as mqtt
 import serial
+import json
 
-ser = serial.Serial('/dev/ttyUSB0', 9600)  
+# Load configuration from the JSON file
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
+    
+SERIAL_PORT = config["SERIAL_PORT"]
+DEVICE_ID = config["DEVICE_ID"]
+IP = config["IP"]
+ser = serial.Serial(SERIAL_PORT, 9600)  
 
 commands_dict_ascii = {
     # Static commands (no parameters) 
@@ -60,7 +68,7 @@ def on_message(client, userdata, msg):
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Connected successfully.")
-        client.subscribe("home/serial/command")
+        client.subscribe("home/serial/command/{DEVICE_ID}")
     else:
         print(f"Failed to connect, error code: {rc}")
 
@@ -71,6 +79,6 @@ mqttc.on_subscribe = on_subscribe
 mqttc.on_unsubscribe = on_unsubscribe
 
 mqttc.username_pw_set("mqtt", "123456789") 
-mqttc.connect("10.205.10.9", 1883, 60)  
+mqttc.connect(IP, 1883, 60)  
 mqttc.connect()
 mqttc.loop_forever()
